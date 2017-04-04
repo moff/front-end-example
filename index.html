@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Test</title>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+        <header>
+            <div id="topNav">
+                <div class="wrapper">
+                    <a class="logo" href="/"><img src="images/logo.png"></a>
+                    <nav>
+                        <ul>
+                            <li><a href="#boxes">Boxes</a></li>
+                            <li><a href="#filter">Filter</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div id="hero">
+                    <div class="text">Simple text in the middle of<br>this background</div>
+                </div>
+            </div>
+        </header>
+        <div class="wrapper">
+            <a name="boxes"></a>
+            <h1 class="heading"><span>Boxes</span></h1>
+        </div>
+        <div class="wrapper boxes">
+            <div class="box">
+                <div class="inner">
+                    <p>Tincidunt nemo, ac sequi, magni sint fringilla perferendis diam lacus, vehicula sem eum, blanditiis expedita, sem. Modi ipsam minus occaecat, beatae cupidatat dolorem aptent, elit ridiculus ipsum turpis, volutpat cubilia? Rerum deleniti! Tincidunt nemo, ac sequi, magni sint fringilla perferendis diam lacus, vehicula sem eum, blanditiis expedita, sem. Modi ipsam minus occaecat, beatae cupidatat dolorem aptent, elit ridiculus ipsum turpis, volutpat cubilia? Rerum deleniti!</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="inner">
+                    <p>Tincidunt nemo, ac sequi, magni sint fringilla perferendis diam lacus, vehicula sem eum, blanditiis expedita, sem. Modi ipsam minus occaecat, beatae cupidatat dolorem aptent, elit ridiculus ipsum turpis, volutpat cubilia? Rerum deleniti!</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="inner">
+                    <p>Tincidunt nemo, ac sequi, magni sint fringilla perferendis diam lacus, vehicula sem eum, blanditiis expedita, sem. Modi ipsam minus occaecat, beatae cupidatat dolorem aptent, elit ridiculus ipsum turpis, volutpat cubilia? Rerum deleniti!  Modi ipsam minus occaecat, beatae cupidatat dolorem aptent, elit ridiculus ipsum turpis, volutpat cubilia? Rerum deleniti!</p>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <a name="filter"></a>
+            <h1 class="heading"><span>Filter</span></h1>
+        </div>
+        <div class="wrapper">
+            <div id="filter_menu">
+                <ul>
+                    <li><a id="category1" class="button" href="#" onclick="return filterGallery(this);">Category 01</a></li>
+                    <li><a id="category2" class="button" href="#" onclick="return filterGallery(this);">Category 02</a></li>
+                </ul>
+            </div>
+            <div id="gallery">
+                <div class="image category1 category2"><img src="images/gallery/img01.png"></div>
+                <div class="image category1 category2"><img src="images/gallery/img02.png"></div>
+                <div class="image category1"><img src="images/gallery/img03.png"></div>
+                <div class="image category1"><img src="images/gallery/img04.png"></div>
+            </div>
+        </div>
+        <footer>
+            <div class="wrapper">
+                <div class="col-4">
+                    <a id="footer_logo" href="#"><img src="images/logo-transparent.png"></a>
+                    <p>Mollit cras dolor fuga ultricies, adipiscing eos sit in ad arcu fermentum voluptatum mollitia nulla lorem, beatae iusto eius taciti iste similique id.</p>
+                </div>
+                <div class="col-3">
+                    <h3><span>ODKAZY</span></h3>
+                    <div class="menu">
+                        <a href="#">Odkaz</a>
+                        <a href="#">Odkaz</a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h3><span>ODKAZY</span></h3>
+                    <div class="bullet_menu">
+                        <ul>
+                            <li><a href="#">Odkaz 01</a></li>
+                            <li><a href="#">Odkaz 01</a></li>
+                            <li><a href="#">Odkaz 01</a></li>
+                            <li><a href="#">Odkaz 01</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript">
+            var images = document.getElementsByClassName("image");
+            var buttons = document.getElementsByClassName("button");
+
+            function filterGallery(target) {
+                var id = target.id;
+
+                // remove active class from all buttons
+                [].forEach.call(buttons, function(button, i, buttons) {
+                    button.classList.remove('active');
+                });
+
+                // add active class to clicked button
+                target.classList.add('active');
+
+                // filter images
+                [].forEach.call(images, function(image, i, images) {
+                    if (image.classList.contains(id)) {
+                        image.classList.remove('hidden');
+                    } else {
+                        image.classList.add('hidden');
+                    }
+                });
+
+                return false;
+            }
+        </script>
+    </body>
+</html>
