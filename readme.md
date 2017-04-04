@@ -8,5 +8,6 @@
 ## Usage
 
 - clone repository
+- run `npm install`
 - run `gulp` to compile SASS
 - open index.html in a browser
